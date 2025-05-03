@@ -1,6 +1,6 @@
 # wait-for-element-browser.js
 
-This fork is meant for personal use, but it may help others. I modified [wait-for-element.js](https://github.com/azu/wait-for-element.js/), reducing it down to its barebones logic, and removed any module system code. I've done this so the js files can be sourced within an HTML `head` element, like so (for a `MutationObserver` implementation):
+_This fork is meant for personal use, but it may help others._ I modified [wait-for-element.js](https://github.com/azu/wait-for-element.js/), reducing it down to its barebones logic, and removed any module system code. I've done this so the js files can be sourced within an HTML `head` element, like so (for a `MutationObserver` implementation):
 
 ```html
 <html>
