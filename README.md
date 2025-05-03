@@ -1,5 +1,35 @@
 # wait-for-element-browser.js
 
-I forked and modified [wait-for-element.js](https://github.com/azu/wait-for-element.js/), reducing it down to its barebones logic, and removing any module system code. I've done this so the js files can be sourced within `head script` elements. 
+This fork is meant for personal use, but it may help others. I modified [wait-for-element.js](https://github.com/azu/wait-for-element.js/), reducing it down to its barebones logic, and removed any module system code. I've done this so the js files can be sourced within an HTML `head` element, like so (for a `MutationObserver` implementation):
 
-It is meant for personal use, but it may help others. 
+```html
+<html>
+  <head>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.0/lib/wait-by-observer.js"></script>
+    <script type="application/javascript">
+      // ...
+      await waitForElement(selector, timeoutMillis)
+      // ...
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+Or like so (for a `setTimeout` implementation):
+
+```html
+<html>
+  <head>
+    <script type="application/javascript" src="https://github.com/DanKaplanSES/wait-for-element-browser.js/blob/1.0.0/lib/wait-by-timer.js"></script>
+    <script type="application/javascript">
+      // ...
+      await waitForElement(selector, timeoutMillis)
+      // ...
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+
