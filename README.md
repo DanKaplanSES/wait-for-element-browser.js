@@ -5,7 +5,7 @@ _This fork is meant for personal use, but it may help others._ I modified [wait-
 ```html
 <html>
   <head>
-    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.0/lib/wait-by-observer.js"></script>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.1/lib/wait-by-observer.js"></script>
     <script type="application/javascript">
       // ...
       await waitForElement(selector, timeoutMillis)
@@ -21,7 +21,7 @@ Or like so (for a `setTimeout` implementation):
 ```html
 <html>
   <head>
-    <script type="application/javascript" src="https://github.com/DanKaplanSES/wait-for-element-browser.js/blob/1.0.0/lib/wait-by-timer.js"></script>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.1/lib/wait-by-timer.js"></script>
     <script type="application/javascript">
       // ...
       await waitForElement(selector, timeoutMillis)
