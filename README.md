@@ -5,7 +5,7 @@ _This fork is meant for personal use, but it may help others._ I modified [wait-
 ```html
 <html>
   <head>
-    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.2/lib/wait-by-observer.js"></script>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.3/lib/wait-by-observer.js"></script>
     <script type="application/javascript">
       // ...
       await waitForElement(selector, timeoutMillis)
@@ -21,7 +21,7 @@ Or like so (for a `setTimeout` implementation):
 ```html
 <html>
   <head>
-    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.2/lib/wait-by-timer.js"></script>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.3/lib/wait-by-timer.js"></script>
     <script type="application/javascript">
       // ...
       await waitForElement(selector, timeoutMillis)
@@ -37,13 +37,31 @@ I also added my own [whileElementExists](https://github.com/DanKaplanSES/wait-fo
 ```html
 <html>
   <head>
-    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.2/lib/while-element-exists-timer.js"></script>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.3/lib/while-element-exists-timer.js"></script>
     <script type="application/javascript">
       // ...
       const intervalId = whileElementExists(`.dynamic-header`, 1000, (dynamicHeaderElement) => {
         if ($(`.my-new-element`, $(`.dynamic-header`)).length === 0) {
             $(`.dynamic-header`).append(`<a class="my-new-element" href="https://example.org" rel="noopener follow">example.org</a>`)
         }
+      })
+      // ...
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+I also added my own [whileElementDoesNotExist](https://github.com/DanKaplanSES/wait-for-element-browser.js/blob/master/lib/while-element-does-not-exist-timer.js) function. It's currently only timer (i.e., interval) based. It can be used like this:
+
+```html
+<html>
+  <head>
+    <script type="application/javascript" src="https://raw.githubusercontent.com/DanKaplanSES/wait-for-element-browser.js/refs/tags/1.0.3/lib/while-element-does-not-exist-timer.js"></script>
+    <script type="application/javascript">
+      // ...
+      const intervalId = whileElementDoesNotExist(`.my-new-element`, 1000, () => {
+        $(`.dynamic-header`).append(`<a class="my-new-element" href="https://example.org" rel="noopener follow">example.org</a>`)
       })
       // ...
     </script>
